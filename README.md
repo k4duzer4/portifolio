@@ -1,6 +1,6 @@
 # Carlos Franco — Órbita
 
-Portfólio de engenharia de software com direção de arte Órbita: tipografia editorial, cor coral, escultura 3D e animações ao longo de toda a experiência.
+Portfólio de engenharia de software com direção de arte Órbita: tipografia editorial, cor coral, conexões visuais e animações ao longo de toda a experiência.
 
 A aplicação está em [`web/`](web/). A pesquisa e as decisões visuais estão em [`docs/design/direcao-portfolio.md`](docs/design/direcao-portfolio.md).
 
@@ -30,11 +30,11 @@ Node.js 22.12+ ou 24+ é necessário para a versão de Vite utilizada. Use o end
 
 ## Movimento
 
-React + TypeScript + Vite; Motion para entradas, transições, ponteiro e interações; GSAP/ScrollTrigger para sequências vinculadas à rolagem; Lenis para suavização; Three.js/React Three Fiber para a escultura 3D com material de cobre e partículas.
+React + TypeScript + Vite; Motion para entradas, transições, ponteiro e interações; GSAP/ScrollTrigger para sequências vinculadas à rolagem; Lenis para suavização; Canvas 2D para a composição de pontos e linhas da abertura.
 
-O Neural Orbit oferece os modos Escultura, Partículas e Galáxia, com transições de forma, rotação por arraste, ajuste de energia e um pulso que dispersa e reúne os pontos. O carregamento usa uma composição orbital leve e a escultura se forma gradualmente.
+O Neural Orbit é uma composição minimalista de pontos claros e linhas finas, com acentos em coral. O clique alterna entre Órbita, Fluxo e Conexões; a rolagem transforma a composição de forma gradual. A interação também funciona por teclado, sem painel de configurações.
 
-A animação da cena é pausada fora da área visível e em abas ocultas. O controle no cabeçalho pausa os movimentos; a preferência `prefers-reduced-motion` é respeitada. Os controles continuam disponíveis por teclado e a orientação pode ser restaurada.
+A animação é pausada fora da área visível e em abas ocultas. O controle no cabeçalho pausa os movimentos; a preferência `prefers-reduced-motion` é respeitada. A transformação por clique permanece disponível mesmo com movimento reduzido.
 
 ## Verificação
 

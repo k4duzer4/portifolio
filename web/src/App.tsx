@@ -9,7 +9,7 @@ import { Cursor, ExperienceProvider, HeroHeading, MagneticLink, Reveal, Scramble
 import { experiences, knowledge, profile, projects, skillGroups } from './data'
 import type { Project } from './data'
 import Resume from './Resume'
-import NeuralOrbit from './components/NeuralOrbit'
+import NeuralOrbit from './components/KineticOrbit'
 
 gsap.registerPlugin(ScrollTrigger)
 const nav = [{ id: 'projetos', label: 'Projetos' }, { id: 'sobre', label: 'Sobre' }, { id: 'trajetoria', label: 'Trajetória' }, { id: 'contato', label: 'Contato' }]

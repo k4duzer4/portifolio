@@ -1,0 +1,20 @@
+.hero-scene.kinetic-orbit{height:530px;isolation:isolate;margin-top:0;overflow:clip;overflow-clip-margin:8px}
+.kinetic-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;position:absolute;top:20px;left:22px;right:22px;color:#b6bab8;font:9px var(--mono);letter-spacing:1.6px}
+.kinetic-heading>span:last-child{font-size:7px;letter-spacing:1px;color:#6d787d}
+.kinetic-interaction{display:block;width:100%;height:100%;position:relative;padding:0;border:0;background:none;text-align:left;color:var(--text);border-radius:4px}
+.kinetic-orbit .scene-canvas.kinetic-canvas{position:absolute;inset:49px 0 63px;pointer-events:none}
+.kinetic-canvas>canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.kinetic-action{position:absolute;bottom:45px;left:26px;right:26px;display:flex;justify-content:space-between;align-items:center;gap:20px;font:9px var(--mono);color:#9ba4a5}
+.kinetic-form{display:flex;align-items:center;gap:8px;letter-spacing:.4px}
+.kinetic-dot{width:4px;height:4px;background:#ff9270;display:inline-block;border-radius:50%}
+.kinetic-transform{display:flex;gap:10px;align-items:center;transition:color .25s;font:11px 'Space Grotesk',sans-serif}
+.kinetic-transform>svg{color:#ce9a7e;transition:transform .35s}
+.kinetic-interaction:hover .kinetic-transform{color:#ede8df}
+.kinetic-interaction:hover .kinetic-transform>svg{transform:translate(3px,-3px)}
+.kinetic-caption{position:absolute;bottom:8px;left:26px;right:26px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #d5d8cf12;padding-top:14px;color:#697478;font:6px var(--mono);letter-spacing:.8px;pointer-events:none}
+.kinetic-caption>span{display:flex;gap:6px;align-items:center}
+.kinetic-caption svg{opacity:.7}
+@media(max-width:1200px){.hero-scene.kinetic-orbit{height:490px}.kinetic-heading{left:15px;right:15px;font-size:8px}.kinetic-heading>span:last-child{font-size:6px}.kinetic-action,.kinetic-caption{left:18px;right:18px}}
+@media(max-width:950px) and (min-width:761px){.hero-scene.kinetic-orbit{height:430px}.kinetic-heading{font-size:7px;letter-spacing:1px;gap:12px}.kinetic-heading>span:last-child{font-size:5px;letter-spacing:.6px}.kinetic-action{font-size:8px;gap:10px}.kinetic-transform{font-size:10px;gap:7px}.kinetic-caption{font-size:5px;letter-spacing:.4px}.kinetic-caption svg{width:9px}}
+@media(max-width:760px){.hero-scene.kinetic-orbit{height:480px;margin-top:35px;max-width:530px}.kinetic-heading{font-size:9px;left:20px;right:20px}.kinetic-heading>span:last-child{font-size:7px}.kinetic-action,.kinetic-caption{left:22px;right:22px}.kinetic-action{font-size:10px}.kinetic-transform{font-size:12px}.kinetic-caption{font-size:6px;letter-spacing:.6px}}
+@media(max-width:480px){.hero-scene.kinetic-orbit{height:385px;margin-top:33px}.kinetic-heading{top:15px;left:6px;right:6px;font-size:8px;letter-spacing:1px}.kinetic-heading>span:last-child{font-size:5px;letter-spacing:.5px}.kinetic-action,.kinetic-caption{left:8px;right:8px}.kinetic-action{font-size:9px;bottom:46px;gap:15px}.kinetic-transform{font-size:11px;gap:6px}.kinetic-caption{font-size:5px;letter-spacing:.4px;padding-top:13px;gap:8px}.kinetic-caption svg{width:9px}.kinetic-orbit .scene-canvas.kinetic-canvas{inset:37px -5px 65px}}

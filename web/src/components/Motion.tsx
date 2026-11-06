@@ -1,11 +1,18 @@
 import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { motion, MotionConfig, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
+import { motion, MotionConfig, useMotionValue, useSpring } from 'motion/react'
 
 const ExperienceContext = createContext({ moving: true, paused: false, toggleMotion: () => {} })
 
 export function ExperienceProvider({ children }: { children: ReactNode }) {
-  const reduced = useReducedMotion()
+  const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReduced(preference.matches)
+    preference.addEventListener('change', update)
+    update()
+    return () => preference.removeEventListener('change', update)
+  }, [])
   const [paused, setPaused] = useState(() => {
     try { return localStorage.getItem('orbita-motion') === 'paused' } catch { return false }
   })
