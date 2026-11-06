@@ -72,7 +72,7 @@ Cor e iluminação ficam concentradas na peça principal e nas imagens dos proje
 ## Arquitetura da informação
 
 1. **Abertura:** nome, especialidade, apresentação pessoal, escultura interativa e ações “Conheça meus projetos” e “Quem eu sou”. Links diretos para currículo, GitHub e LinkedIn. Sem introdução que bloqueie a leitura.
-2. **Projetos selecionados:** projetos reais com imagem, problema resolvido, papel desempenhado e tecnologias efetivamente utilizadas. O estudo destaca a experiência em contabilidade pública com IA e o GameLog, com Reservas e FilmeFaves em uma lista complementar. As capas ilustram a direção de arte; capturas reais poderão substituí-las.
+2. **Projetos selecionados:** na ordem definida pelo autor: Save, TripSplit, ANADE, FilmeFaves, GameLog e Bazar Solidário Nina. ANADE é apresentado como portal de uma organização suprapartidária; GameLog tem o status visível de desenvolvimento. TripSplit, ANADE, FilmeFaves e Bazar Nina utilizam capturas reais; Save e GameLog mantêm composições ilustrativas.
 3. **Estudos de caso:** contexto → problema → decisões → arquitetura → resultado → demonstração e repositório, quando disponíveis. Mostrar trade-offs e a participação individual. Métricas apenas quando existirem evidências.
 4. **AI Lab:** uma demonstração pequena, útil e relacionada ao trabalho real do autor. Sugestão: consulta a documentos com trechos de origem visíveis. No estudo de design o fluxo é simulado e rotulado.
 5. **Sobre, trajetória e competências:** apresentação humana curta, foto opcional, formação, experiência e competências agrupadas por frontend, backend e IA. Projetos pessoais e estudos devem ser identificados corretamente. Sem barras percentuais de habilidade.
@@ -137,10 +137,12 @@ Para uma integração pública: chamadas por servidor, segredo fora do cliente, 
 
 | Projeto / fonte | Evidência para contratação | Como apresentar |
 | --- | --- | --- |
-| Contabilidade pública + IA — currículo enviado | Participação em aplicação profissional e integração de assistente LLM. | Case de contribuição individual: interfaces, APIs, regras de negócio, bancos e integração de IA. Não atribuir sozinho todo o sistema ao autor nem inferir o modelo/provedor utilizado. |
-| [GameLog](https://github.com/k4duzer4/gamelog) | README descreve plataforma de jogos com React, Express, Prisma, PostgreSQL e Docker. | Demonstrar conexão entre frontend e backend. O estado de conclusão das funcionalidades deve ser confirmado antes do texto final. |
-| [Reservas](https://github.com/k4duzer4/react-ts-reservation-architecture) | Projeto descrito como dashboard com React e TypeScript e foco em arquitetura client-side. | Evidenciar organização de código, UI e estado. Não apresentar como backend completo. |
-| [FilmeFaves](https://github.com/k4duzer4/film-faves) | Aplicação React integrada à API TMDb. | Projeto complementar sobre consumo de API e experiência de navegação. |
+| [Save](https://savest.com.br/) — currículo e identificação enviados pelo autor | Atuação profissional em aplicação de contabilidade pública com integração de LLM. | Destacar que foi um sistema em que Carlos trabalhou na Clair & Leitão, com contribuição individual descrita. |
+| [TripSplit](https://github.com/k4duzer4/tripsplit1) | Aplicação para viagens, despesas compartilhadas e acertos. | Apresentar o fluxo de interface e API Node.js. |
+| [ANADE](https://github.com/k4duzer4/anade) | Portal com Next.js, API Express, autenticação e PostgreSQL. | Apresentar como organização suprapartidária, conforme orientação do autor. |
+| [FilmeFaves](https://github.com/k4duzer4/film-faves) | Aplicação React integrada à API TMDb. | Destacar consumo de API e navegação. |
+| [GameLog](https://github.com/k4duzer4/gamelog) | Plataforma de jogos com interface e backend em monorepo. | Manter “Em desenvolvimento” visível no card e nos detalhes. |
+| [Bazar Solidário Nina](https://github.com/k4duzer4/bazar-nina-2024) | Site estático para um evento beneficente de 2024. | Destacar comunicação e organização das informações sobre a causa. |
 
 As descrições dos repositórios foram consultadas, sem auditoria do código ou execução dos projetos. A seleção final deve considerar quais versões Carlos considera mais prontas e representativas. O telefone fornecido pode ficar no currículo; e-mail e LinkedIn bastam para o contato direto no site.
 
@@ -168,7 +170,7 @@ Objetivo visual: movimento fluido em aparelho intermediário. A qualidade e o n�
 
 ## Próxima etapa
 
-A direção Órbita e o título Engenheiro de Software já foram escolhidos. A implementação apresenta quatro projetos, currículo em uma página própria com impressão, busca local no perfil, trajetória e contato. Datas e cargos oficiais das experiências poderão ser complementados pelo autor. O laboratório é identificado como busca local e não depende de chaves ou serviços de IA.
+A direção Órbita e o título Engenheiro de Software já foram escolhidos. A implementação apresenta os seis projetos selecionados pelo autor, currículo em uma página própria com impressão, busca local no perfil, trajetória e contato. Datas e cargos oficiais das experiências poderão ser complementados pelo autor. O laboratório é identificado como busca local e não depende de chaves ou serviços de IA.
 
 ## Conferência do estudo visual
 

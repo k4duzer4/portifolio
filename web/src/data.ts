@@ -11,6 +11,7 @@ export const profile = {
 export type Project = {
   id: string; number: string; name: string; category: string; summary: string
   tags: string[]; image?: string; github?: string; demo?: string; demoLabel?: string
+  status?: 'Em desenvolvimento'
   context: string; contribution: string[]; architecture: string; visual: 'intelligence' | 'games' | 'image'
 }
 
@@ -26,22 +27,22 @@ export const projects: Project[] = [
     architecture: 'Interface web → APIs e regras de negócio → persistência de dados. A integração do assistente acrescenta uma camada conversacional às funcionalidades do sistema. Este case descreve minha participação na equipe; a ilustração é uma composição visual, não uma captura do produto.',
   },
   {
-    id: 'gamelog', number: '02', name: 'GameLog', category: 'PROJETO FULL STACK · JOGOS & DESCOBERTA',
-    summary: 'Uma plataforma social para catalogar, avaliar e descobrir jogos. Frontend, API e dados em um monorepo.',
-    tags: ['React', 'Node.js', 'Prisma', 'PostgreSQL'], visual: 'games',
-    github: 'https://github.com/k4duzer4/gamelog',
-    context: 'Uma plataforma inspirada na ideia de um diário de entretenimento, aplicada ao universo dos jogos digitais. O repositório organiza a experiência web, os serviços e a infraestrutura no mesmo monorepo.',
-    contribution: ['Estrutura de frontend com React, TypeScript, Tailwind, shadcn/ui, TanStack Query e Zustand.', 'Backend com Node.js, Express, TypeScript, Prisma e PostgreSQL.', 'Integração de catálogo com a API IGDB e organização de infraestrutura com Docker Compose.', 'Organização do projeto com Turborepo e npm workspaces.'],
-    architecture: 'React / TypeScript → API Express → Prisma / PostgreSQL. O catálogo integra a API IGDB. A organização em monorepo aproxima interface, serviços e infraestrutura. O mapa visual representa essa estrutura; consulte o repositório para acompanhar o estágio atual do projeto.',
+    id: 'tripsplit', number: '02', name: 'TripSplit', category: 'FULL STACK · VIAGENS & DESPESAS',
+    summary: 'Organização de viagens em grupo, divisão de despesas e cálculo do acerto entre participantes.',
+    tags: ['React', 'Node.js', 'Tailwind CSS'], visual: 'image', image: '/projects/tripsplit.webp',
+    github: 'https://github.com/k4duzer4/tripsplit1', demo: 'https://tripsplit1-seven.vercel.app',
+    context: 'Uma aplicação para acompanhar os gastos de uma viagem compartilhada e organizar o que cada pessoa precisa acertar ao final.',
+    contribution: ['Interface para viagens, participantes, despesas e pagamentos.', 'API Node.js para autenticação, convites e regras de divisão de valores.', 'Cálculo de transferências entre participantes, encerramento de viagens e exportação de relatórios.'],
+    architecture: 'Frontend React integrado a uma API Node.js. A lógica de acerto organiza os saldos do grupo; a versão descrita no repositório utiliza persistência local em arquivo JSON.',
   },
   {
-    id: 'reservas', number: '03', name: 'FlowReserva', category: 'FRONTEND · ARQUITETURA CLIENT-SIDE',
-    summary: 'Um dashboard de reservas com foco em experiência de uso, organização de código e componentes reutilizáveis.',
-    tags: ['React', 'TypeScript', 'Dashboard'], visual: 'image', image: '/projects/reservas.webp',
-    github: 'https://github.com/k4duzer4/react-ts-reservation-architecture', demo: 'https://react-ts-reservation-architecture.vercel.app',
-    context: 'Dashboard de gerenciamento de reservas desenvolvido com React e TypeScript. O foco é a arquitetura do cliente, a organização do código e a experiência de navegação.',
-    contribution: ['Desenvolvimento de uma interface de gerenciamento de reservas.', 'Organização client-side com React e TypeScript.', 'Exploração de componentes reutilizáveis e de fluxos de interação em dashboard.'],
-    architecture: 'Aplicação React e TypeScript com organização client-side. A autenticação da demonstração é simulada; o projeto é apresentado como trabalho de frontend. A imagem vem da documentação pública do repositório e contém dados de demonstração.',
+    id: 'anade', number: '03', name: 'ANADE', category: 'PORTAL · ORGANIZAÇÃO SUPRAPARTIDÁRIA',
+    summary: 'Portal de uma organização suprapartidária, com área de membros, gestão de acesso e identidade visual própria.',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL'], visual: 'image', image: '/projects/anade.webp',
+    github: 'https://github.com/k4duzer4/anade', demo: 'https://anade.vercel.app',
+    context: 'Uma presença digital para uma organização suprapartidária, reunindo informações institucionais e uma área de acesso para seus membros.',
+    contribution: ['Interface responsiva em Next.js, React e TypeScript, com temas claro e escuro.', 'API Express com autenticação OAuth2 e controle de acesso por perfil.', 'Organização em monorepo, com migrações SQL e sessões persistidas no PostgreSQL.'],
+    architecture: 'Frontend Next.js conectado a uma API Express. PostgreSQL mantém os dados e as sessões; o acesso dos membros utiliza OAuth2 e permissões verificadas no backend.',
   },
   {
     id: 'filmefaves', number: '04', name: 'FilmeFaves', category: 'FRONTEND · EXPLORAÇÃO DE FILMES',
@@ -51,6 +52,25 @@ export const projects: Project[] = [
     context: 'Uma aplicação para descobrir filmes e consultar informações, detalhes, avaliações e títulos populares usando o catálogo do The Movie Database.',
     contribution: ['Desenvolvimento da interface em React e JavaScript.', 'Integração com a API TMDb para consultar informações de filmes.', 'Composição de uma experiência de navegação e descoberta de títulos.'],
     architecture: 'Interface React → integração HTTP → API TMDb. O projeto destaca consumo de API externa e organização da experiência no cliente. A capa é uma captura real da demonstração pública.',
+  },
+  {
+    id: 'gamelog', number: '05', name: 'GameLog', category: 'FULL STACK · JOGOS & DESCOBERTA',
+    status: 'Em desenvolvimento',
+    summary: 'Plataforma social em desenvolvimento para catalogar, avaliar e descobrir jogos digitais.',
+    tags: ['React', 'Node.js', 'Prisma', 'PostgreSQL'], visual: 'games',
+    github: 'https://github.com/k4duzer4/gamelog',
+    context: 'Um projeto em desenvolvimento que conecta um catálogo de jogos a uma experiência social de descoberta e avaliação.',
+    contribution: ['Construção do frontend em React e TypeScript.', 'Estruturação de API Express, Prisma e PostgreSQL.', 'Integração com o catálogo IGDB e organização do monorepo com Docker e Turborepo.'],
+    architecture: 'React → API Express → Prisma / PostgreSQL, com integração ao catálogo IGDB. O projeto está em desenvolvimento e suas funcionalidades seguem em evolução.',
+  },
+  {
+    id: 'bazar-nina', number: '06', name: 'Bazar Solidário Nina', category: 'SITE · PROJETO SOLIDÁRIO',
+    summary: 'Site do I Bazar Solidário Nina, criado para divulgar um evento beneficente em apoio ao cuidado de animais acolhidos.',
+    tags: ['HTML5', 'CSS3', 'Responsivo'], visual: 'image', image: '/projects/bazar-nina.webp',
+    github: 'https://github.com/k4duzer4/bazar-nina-2024', demo: 'https://bazarnina.vercel.app',
+    context: 'Um site para apresentar o bazar realizado em 2024 e orientar a participação e as doações para castrações e medicamentos de animais acolhidos.',
+    contribution: ['Criação das páginas de apresentação, sobre o evento e doações.', 'Organização das informações e dos links de participação.', 'Construção da identidade do site com HTML e CSS.'],
+    architecture: 'Site estático em HTML e CSS, com páginas informativas e links externos para redes sociais e doações.',
   },
 ]
 
@@ -73,7 +93,7 @@ export const knowledge = [
   { test: /\b(formacao|estudo|universidade|faculdade|uepb|curso|graduacao)\b/, text: 'Sou graduando em Ciência da Computação pela Universidade Estadual da Paraíba, em Patos, desde 2022.2. Minha formação inclui algoritmos, estruturas de dados, programação orientada a objetos, redes e arquitetura de computadores.', source: 'Formação acadêmica · UEPB', target: '#sobre' },
   { test: /\b(back|backend|api|node|express|banco|sql|autenticacao)\b/, text: 'Trabalho com Node.js, Express, APIs REST, autenticação, regras de negócio e bancos relacionais. No GameLog, o repositório conecta React a uma API Express com Prisma e PostgreSQL.', source: 'Competências · Backend / Projeto · GameLog', target: '#projetos' },
   { test: /\b(stack|tecnologia|tecnologias|front|frontend|react|next|typescript|linguagem)\b/, text: 'Minha base de desenvolvimento web inclui React, Next.js, TypeScript e Node.js. No frontend, utilizo Tailwind, Styled Components e ferramentas como TanStack Query e Zustand; no backend, APIs REST e bancos relacionais.', source: 'Competências técnicas · Currículo', target: '#stack' },
-  { test: /\b(projeto|projetos|gamelog|reserva|filme|portfolio)\b/, text: 'Você pode explorar o GameLog, uma plataforma full stack para jogos; o FlowReserva, um dashboard React e TypeScript; e o FilmeFaves, integrado à API TMDb. Também apresento minha participação profissional em um sistema de contabilidade pública com IA.', source: 'Projetos selecionados · Portfólio', target: '#projetos' },
+  { test: /\b(projeto|projetos|save|tripsplit|anade|filme|gamelog|bazar|nina|portfolio)\b/, text: 'Meus projetos selecionados são Save, sistema em que trabalhei na Clair & Leitão; TripSplit, para viagens e despesas; ANADE, portal de uma organização suprapartidária; FilmeFaves; GameLog, em desenvolvimento; e Bazar Solidário Nina.', source: 'Projetos selecionados · Portfólio', target: '#projetos' },
   { test: /\b(experiencia|trabalho|knex|clair|equipe)\b/, text: 'Minha trajetória inclui desenvolvimento web full stack na KNEX Consultoria Júnior e em um sistema de contabilidade pública na Clair & Leitão, além de formação prática em Cloud, Dados e IA na Compass UOL.', source: 'Experiência e aprendizado · Currículo', target: '#trajetoria' },
   { test: /\b(contato|email|linkedin|github|onde|cidade|local)\b/, text: 'Sou de Patos, na Paraíba. Meu e-mail é kadusa09@gmail.com, meu GitHub é k4duzer4 e meu LinkedIn é carlosfrancosa. Os links estão na seção de contato.', source: 'Contato · Carlos Franco', target: '#contato' },
 ]

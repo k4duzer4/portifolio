@@ -21,6 +21,8 @@ Node.js 22.12+ ou 24+ é necessário para a versão de Vite utilizada. Use o end
 
 ## Conteúdo
 
+Projetos em destaque, na ordem escolhida: Save, TripSplit, ANADE (organização suprapartidária), FilmeFaves, GameLog (em desenvolvimento) e Bazar Solidário Nina.
+
 - Apresentação como Engenheiro de Software.
 - Projetos com detalhes em diálogo acessível e links para repositórios e demonstrações públicas.
 - Sobre, formação, competências e trajetória profissional.
