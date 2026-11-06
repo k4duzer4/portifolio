@@ -10,17 +10,18 @@ export const profile = {
 
 export type Project = {
   id: string; number: string; name: string; category: string; summary: string
-  tags: string[]; image?: string; github?: string; demo?: string
+  tags: string[]; image?: string; github?: string; demo?: string; demoLabel?: string
   context: string; contribution: string[]; architecture: string; visual: 'intelligence' | 'games' | 'image'
 }
 
 export const projects: Project[] = [
   {
-    id: 'contabilidade', number: '01', name: 'Software público. Inteligência aplicada.',
+    id: 'contabilidade', number: '01', name: 'Save',
     category: 'EXPERIÊNCIA PROFISSIONAL · CLAIR & LEITÃO',
-    summary: 'Desenvolvimento full stack e integração de um assistente com IA em um sistema de contabilidade pública.',
+    summary: 'Sistema em que trabalhei na Clair & Leitão, atuando no desenvolvimento full stack e na integração de um assistente com IA para contabilidade pública.',
     tags: ['React', 'APIs REST', 'LLMs'], visual: 'intelligence',
-    context: 'Um sistema web de contabilidade pública voltado ao atendimento de prefeituras da Paraíba. Uma experiência de desenvolvimento em um produto real, com regras de negócio e necessidades específicas do domínio.',
+    demo: 'https://savest.com.br/', demoLabel: 'Visitar site do Save',
+    context: 'O Save é o sistema de contabilidade pública em que trabalhei na Clair & Leitão, voltado ao atendimento de prefeituras da Paraíba. Atuei no desenvolvimento de funcionalidades full stack e participei da integração de um assistente conversacional com IA, em colaboração com a equipe.',
     contribution: ['Desenvolvimento de interfaces responsivas e componentes reutilizáveis com React, JavaScript, Bootstrap e Styled Components.', 'Construção e manutenção de funcionalidades, APIs REST, regras de negócio e integração com bancos de dados.', 'Participação no desenvolvimento e na integração de um assistente conversacional com LLM, adaptado ao contexto do sistema.', 'Colaboração em melhorias, correções e evolução da arquitetura da aplicação.'],
     architecture: 'Interface web → APIs e regras de negócio → persistência de dados. A integração do assistente acrescenta uma camada conversacional às funcionalidades do sistema. Este case descreve minha participação na equipe; a ilustração é uma composição visual, não uma captura do produto.',
   },
