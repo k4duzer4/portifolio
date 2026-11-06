@@ -32,7 +32,9 @@ Node.js 22.12+ ou 24+ é necessário para a versão de Vite utilizada. Use o end
 
 React + TypeScript + Vite; Motion para entradas, transições, ponteiro e interações; GSAP/ScrollTrigger para sequências vinculadas à rolagem; Lenis para suavização; Three.js/React Three Fiber para a escultura 3D com material de cobre e partículas.
 
-A animação da cena é pausada fora da área visível e em abas ocultas. O controle no cabeçalho pausa os movimentos; a preferência `prefers-reduced-motion` é respeitada. O canvas tem uma composição alternativa para dispositivos sem suporte.
+O Neural Orbit oferece os modos Escultura, Partículas e Galáxia, com transições de forma, rotação por arraste, ajuste de energia e um pulso que dispersa e reúne os pontos. O carregamento usa uma composição orbital leve e a escultura se forma gradualmente.
+
+A animação da cena é pausada fora da área visível e em abas ocultas. O controle no cabeçalho pausa os movimentos; a preferência `prefers-reduced-motion` é respeitada. Os controles continuam disponíveis por teclado e a orientação pode ser restaurada.
 
 ## Verificação
 

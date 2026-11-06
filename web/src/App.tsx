@@ -1,6 +1,6 @@
-import { Component, lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import type { ErrorInfo, FormEvent, ReactNode } from 'react'
-import { AnimatePresence, motion, useInView, useMotionValue, useScroll, useSpring } from 'motion/react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import type { FormEvent, ReactNode } from 'react'
+import { AnimatePresence, motion, useMotionValue, useScroll, useSpring } from 'motion/react'
 import { ArrowDown, ArrowDownRight, ArrowUpRight, Braces, BrainCircuit, Check, Code2, Copy, ExternalLink, FileText, GitFork as Github, GraduationCap, Layers3, ContactRound as Linkedin, LoaderCircle, Menu, Pause, Play, Sparkles, Terminal, X } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -9,18 +9,11 @@ import { Cursor, ExperienceProvider, HeroHeading, MagneticLink, Reveal, Scramble
 import { experiences, knowledge, profile, projects, skillGroups } from './data'
 import type { Project } from './data'
 import Resume from './Resume'
+import NeuralOrbit from './components/NeuralOrbit'
 
 gsap.registerPlugin(ScrollTrigger)
-const OrbitScene = lazy(() => import('./components/OrbitScene'))
 const nav = [{ id: 'projetos', label: 'Projetos' }, { id: 'sobre', label: 'Sobre' }, { id: 'trajetoria', label: 'Trajetória' }, { id: 'contato', label: 'Contato' }]
 
-class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
-  state = { failed: false }
-  static getDerivedStateFromError() { return { failed: true } }
-  componentDidCatch(error: Error, info: ErrorInfo) { console.info('A cena 3D foi substituída pela composição alternativa.', error.message, info.componentStack) }
-  render() { return this.state.failed ? <OrbitalFallback /> : this.props.children }
-}
-function OrbitalFallback() { return <div className="orbital-fallback" aria-hidden="true"><span /><span /><span /></div> }
 
 function Header() {
   const { moving, toggleMotion } = useExperience()
@@ -47,18 +40,6 @@ function Header() {
 }
 
 function Hero() {
-  const { moving } = useExperience()
-  const sceneRef = useRef<HTMLDivElement>(null)
-  const visible = useInView(sceneRef, { margin: '150px' })
-  const [mode, setMode] = useState<'surface' | 'particles'>('surface')
-  const [awake, setAwake] = useState(false)
-  const [pageVisible, setPageVisible] = useState(true)
-  useEffect(() => {
-    const timer = setTimeout(() => setAwake(true), 250)
-    const change = () => setPageVisible(!document.hidden)
-    document.addEventListener('visibilitychange', change)
-    return () => { clearTimeout(timer); document.removeEventListener('visibilitychange', change) }
-  }, [])
   return <section className="hero shell" id="inicio" aria-label="Apresentação de Carlos Franco">
     <div className="hero-copy">
       <Reveal className="hero-eyebrow" delay={.1}><span className="status-dot" />CARLOS FRANCO / PORTFÓLIO 2026</Reveal>
@@ -67,13 +48,7 @@ function Hero() {
       <Reveal className="hero-actions" delay={.65}><MagneticLink className="button button-primary" href="#projetos"><span>Explore meus projetos</span><ArrowUpRight size={19} /></MagneticLink><MagneticLink className="button button-text" href="/curriculo" target="_blank"><FileText size={16} /><span>Ver currículo</span><ArrowUpRight size={14} /></MagneticLink></Reveal>
       <Reveal className="hero-socials" delay={.75}><a href={profile.github} target="_blank" rel="noopener noreferrer"><Github size={14} />GitHub<ArrowUpRight size={11} /></a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={14} />LinkedIn<ArrowUpRight size={11} /></a><span className="hero-location">PATOS, PB / BRASIL</span></Reveal>
     </div>
-    <motion.div ref={sceneRef} className="hero-scene" initial={moving ? { opacity: 0, scale: .82, rotate: -8 } : false} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: moving ? 1.8 : 0, delay: .2, ease: [.16, 1, .3, 1] }}>
-      <div className="scene-label"><span className="crosshair">+</span>EXPERIMENTO 001 / NEURAL ORBIT<span className="scene-live"><i />LIVE</span></div>
-      <div className="scene-glow" aria-hidden="true" /><div className="scene-ring scene-ring-one" aria-hidden="true" /><div className="scene-ring scene-ring-two" aria-hidden="true" /><div className="scene-ring scene-ring-three" aria-hidden="true" />
-      <div className="scene-canvas" role="img" aria-label="Escultura orbital 3D em cobre. Uma representação das conexões entre engenharia, criatividade e inteligência.">{awake ? <SceneBoundary><Suspense fallback={<OrbitalFallback />}><OrbitScene moving={moving && pageVisible} visible={visible} mode={mode} /></Suspense></SceneBoundary> : <OrbitalFallback />}</div>
-      <span className="scene-coordinate coordinate-left">X 024<br />Y 086</span><span className="scene-coordinate coordinate-right">HUMAN<br />× MACHINE</span>
-      <div className="scene-bottom"><span><span className="scene-cross">✳</span> ENGENHARIA ENCONTRA CRIATIVIDADE</span><button onClick={() => setMode(mode === 'surface' ? 'particles' : 'surface')} aria-pressed={mode === 'particles'}><span>{mode === 'surface' ? 'Explorar partículas' : 'Explorar superfície'}</span><Layers3 size={13} /></button></div>
-    </motion.div>
+    <NeuralOrbit />
     <div className="hero-bottom"><a className="scroll-cue" href="#projetos"><span className="scroll-cue-line" /><span>ROLE PARA DESCOBRIR</span><ArrowDown size={13} /></a><span>BOAS IDEIAS MERECEM BOM CÓDIGO.</span></div>
   </section>
 }
