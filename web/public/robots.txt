@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://carlos-franco-orbita.stunningglobe2.chatgpt.site/sitemap.xml
